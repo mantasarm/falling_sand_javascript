@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Krentančio smėlio simuliacija</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="sketch.js"></script>
+    <script src="Grid.js"></script>
+    <script src="Cell.js"></script>
+  </head>
+
+  <body>
+    <h2 style = "color:aliceblue; text-align: center;">Krentančio smėlio simuliacija</h2>
+    <div id="sketch-holder" class="center"></div>
+
+    <p class="center" id="fpsP"></p>
+
+
+    <div class = "center">
+      <span><button class="btn" onclick="elementButtonPressed(airElement())">Oras</button></span>
+      <span><button class="btn" style="color: rgb(180, 180, 180);" onclick="elementButtonPressed(solidElement())">Siena</button></span>
+      <span><button class="btn" style="color: rgb(253, 231, 181);" onclick="elementButtonPressed(sandElement())">Smėlis</button></span>
+      <span><button class="btn" style="color: rgb(55, 46, 229);" onclick="elementButtonPressed(waterElement())">Vanduo</button></span>
+      <span><button class="btn" style="color: rgb(117, 168, 213);" onclick="elementButtonPressed(iceElement())">Ledas</button></span>
+      <span><button class="btn" style="color: rgb(143, 159, 234);" onclick="elementButtonPressed(steamElement())">Garai</button></span>
+      <span><button class="btn" style="color: rgb(255, 42, 42);" onclick="elementButtonPressed(fireElement())">Ugnis</button></span>
+      <span><button class="btn" style="color: rgb(130, 130, 219);" onclick="elementButtonPressed(coldFireElement())">Šalta ugnis</button></span>
+      <span><button class="btn" style="color: rgb(150, 150, 150);" onclick="elementButtonPressed(smokeElement())">Dūmai</button></span>
+      <span><button class="btn" style="color: rgb(112, 112, 112);" onclick="elementButtonPressed(coalElement())">Anglis</button></span>
+      <span><button class="btn" style="color: rgb(166, 132, 87);" onclick="elementButtonPressed(woodElement())">Mediena</button></span>
+      <span><button class="btn" style="color: rgb(220, 184, 138);" onclick="elementButtonPressed(sawDustElement())">Medienos drožlės</button></span>
+    </div>
+
+    <div class="center">
+      <span>
+        <label for="brushSizeSlider">Teptuko dydis: </label>
+        <input id = "brushSizeSlider" type="range" min="0" max="1000" value="20" oninput="grid.brushSize = map(parseInt(this.value), 0, 1000, 2, grid.grid.length)">
+      </span>
+      <span>
+        <form>
+          <label for="simSpeeds">Simuliacijos greitis</label>
+          <select id="simSpeeds">
+            <option value="1" selected>1x</option>
+            <option value="2">2x</option>
+            <option value="3">3x</option>
+            <option value="4">4x</option>
+            <option value="5">5x</option>
+          </select>
+        </form>
+      </span>
+      <span>
+        <form>
+          <label for="gridSizes">Masyvo dydis: </label>
+          <select id="gridSizes">
+            <option value="100">100x100</option>
+            <option value="150">150x150</option>
+            <option value="200" selected>200x200</option>
+            <option value="250">250x250</option>
+            <option value="300">300x300</option>
+            <option value="350">350x350</option>
+            <option value="400">400x400</option>
+          </select>
+        </form>
+      </span>
+      <span>
+        <label for="pauseBtn">Simuliacija </label>
+        <button class="btn" id="pauseBtn" onclick="pausePlay()">paleista</button>
+      </span>
+      <span>
+        <label for="toggleHeatMap"> Rodyti termogramą </label><br>
+      </span>
+      <span>
+        <input type="checkbox" id="toggleHeatMap" name="render_heat_map" oninput=toggleHeatMap()>
+      </span>
+    </div>
+
+    <p style="text-align: right;">Projektą sukūrė Mantas Armalys ir Adomas Riepšas iš 2A VŽG klasės</p>
+
+    <script>
+      function elementButtonPressed(element) {
+        grid.selectedElement = element;
+      }
+
+      function pausePlay() {
+        grid.updateGrid = !grid.updateGrid;
+
+        if (grid.updateGrid) {
+          document.getElementById("pauseBtn").innerText = "paleista";
+        } else {
+          document.getElementById("pauseBtn").innerText = "sustabdyta";
+        }
+      }
+
+      function toggleHeatMap() {
+        grid.renderHeatMap = document.getElementById("toggleHeatMap").checked;
+      }
+    </script>
+
+  </body>
+</html>
