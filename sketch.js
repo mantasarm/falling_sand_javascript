@@ -12,6 +12,7 @@ let simSpeed = 1;
 function setup() {
   canvas = createCanvas(700, 700, WEBGL);
   canvas.parent('sketch-holder');
+  canvas.attribute('willReadFrequently', true);
 
   grid = new Grid(200, 200, WEBGL);
 

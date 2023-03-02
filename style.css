@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-  background-color: rgb(22, 25, 33);
+  background-color: rgb(33, 33, 33);
 }
 
 canvas {
@@ -21,9 +21,9 @@ canvas {
   margin-left: 4px;
   margin-right: 4px;
   margin-bottom: 10px;
-  background-color: rgb(32, 36, 48);
+  background-color: rgb(56, 56, 56);
   color: rgb(255, 255, 255);
-  border:rgb(32, 36, 48);
+  border:rgb(33, 33, 33);
 }
 
 #brushSizeSlider {
@@ -33,14 +33,14 @@ canvas {
 #gridSizes {
   border: none;
   color: aliceblue;
-  background-color: rgb(32, 36, 48);
+  background-color: rgb(56, 56, 56);
   margin-right: 40px;
 }
 
 #simSpeeds {
   border: none;
   color: aliceblue;
-  background-color: rgb(32, 36, 48);
+  background-color: rgb(56, 56, 56);
   margin-right: 40px;
 }
 
@@ -48,6 +48,10 @@ canvas {
   width: 90px;
   margin-right: 40px;
   font-family: 'Times New Roman', Times, serif;
+}
+
+#inputfile {
+  color: rgb(255, 255, 255);
 }
 
 .center {
