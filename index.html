@@ -16,11 +16,11 @@
   </head>
 
   <body>
-    <!-- <h2 style = "color:aliceblue; text-align: center;">Krentančio smėlio simuliacija</h2> -->
-    <h2 style = "color:aliceblue; text-align: center;">Falling sand simulation</h2>
+    <h2 style = "color:aliceblue; text-align: center;">Krentančio smėlio simuliacija</h2>
+    <!-- <h2 style = "color:aliceblue; text-align: center;">Falling sand simulation</h2> -->
     <div id="sketch-holder" class="center"></div>
 
-    <!-- <div class = "center">
+    <div class = "center">
       <span><button class="btn" onclick="elementButtonPressed(airElement())">Oras</button></span>
       <span><button class="btn" style="color: rgb(180, 180, 180);" onclick="elementButtonPressed(solidElement())">Siena</button></span>
       <span><button class="btn" style="color: rgb(253, 231, 181);" onclick="elementButtonPressed(sandElement())">Smėlis</button></span>
@@ -33,9 +33,9 @@
       <span><button class="btn" style="color: rgb(112, 112, 112);" onclick="elementButtonPressed(coalElement())">Anglis</button></span>
       <span><button class="btn" style="color: rgb(166, 132, 87);" onclick="elementButtonPressed(woodElement())">Mediena</button></span>
       <span><button class="btn" style="color: rgb(220, 184, 138);" onclick="elementButtonPressed(sawDustElement())">Medienos drožlės</button></span>
-    </div> -->
+    </div>
 
-    <div class = "center">
+    <!-- <div class = "center">
       <span><button class="btn" onclick="elementButtonPressed(airElement())">Air</button></span>
       <span><button class="btn" style="color: rgb(180, 180, 180);" onclick="elementButtonPressed(solidElement())">Solid</button></span>
       <span><button class="btn" style="color: rgb(253, 231, 181);" onclick="elementButtonPressed(sandElement())">Sand</button></span>
@@ -48,18 +48,18 @@
       <span><button class="btn" style="color: rgb(112, 112, 112);" onclick="elementButtonPressed(coalElement())">Coal</button></span>
       <span><button class="btn" style="color: rgb(166, 132, 87);" onclick="elementButtonPressed(woodElement())">Wood</button></span>
       <span><button class="btn" style="color: rgb(220, 184, 138);" onclick="elementButtonPressed(sawDustElement())">Sawdust</button></span>
-    </div>
+    </div> -->
 
     <div class="center">
       <span>
-        <!-- <label for="brushSizeSlider">Teptuko dydis: </label> -->
-        <label for="brushSizeSlider">Brush size: </label>
+        <label for="brushSizeSlider">Teptuko dydis: </label>
+        <!-- <label for="brushSizeSlider">Brush size: </label> -->
         <input id = "brushSizeSlider" type="range" min="0" max="1000" value="20" oninput="grid.brushSize = map(parseInt(this.value), 0, 1000, 2, grid.grid.length)">
       </span>
       <span>
         <form>
-          <!-- <label for="simSpeeds">Simuliacijos greitis</label> -->
-          <label for="simSpeeds">Simulation speed: </label>
+          <label for="simSpeeds">Simuliacijos greitis</label>
+          <!-- <label for="simSpeeds">Simulation speed: </label> -->
           <select id="simSpeeds">
             <option value="1" selected>1x</option>
             <option value="2">2x</option>
@@ -71,8 +71,8 @@
       </span>
       <span>
         <form>
-          <!-- <label for="gridSizes">Masyvo dydis: </label> -->
-          <label for="gridSizes">Array size: </label>
+          <label for="gridSizes">Masyvo dydis: </label>
+          <!-- <label for="gridSizes">Array size: </label> -->
           <select id="gridSizes">
             <option value="100">100x100</option>
             <option value="150">150x150</option>
@@ -85,14 +85,14 @@
         </form>
       </span>
       <span>
-        <!-- <label for="pauseBtn">Simuliacija </label> -->
-        <label for="pauseBtn">Simulation is </label>
-        <!-- <button class="btn" id="pauseBtn" onclick="pausePlay()">paleista</button> -->
-        <button class="btn" id="pauseBtn" onclick="pausePlay()">running</button>
+        <label for="pauseBtn">Simuliacija </label>
+        <!-- <label for="pauseBtn">Simulation is </label> -->
+        <button class="btn" id="pauseBtn" onclick="pausePlay()">paleista</button>
+        <!-- <button class="btn" id="pauseBtn" onclick="pausePlay()">running</button> -->
       </span>
       <span>
-        <!-- <label for="toggleHeatMap"> Rodyti termogramą </label><br> -->
-        <label for="toggleHeatMap"> Show heatmap </label>
+        <label for="toggleHeatMap"> Rodyti termogramą </label><br>
+        <!-- <label for="toggleHeatMap"> Show heatmap </label> -->
       </span>
       <span>
         <input type="checkbox" id="toggleHeatMap" name="render_heat_map" oninput=toggleHeatMap()>
@@ -101,8 +101,8 @@
 
     <label class="center" id="fpsP"></label>
 
-    <!-- <p style="text-align: right;">Projektą sukūrė Mantas Armalys ir Adomas Riepšas iš 2A VŽG klasės</p> -->
-    <p style="text-align: right; padding-top: 3cm;">Project was made by Mantas Armalys and Adomas Riepšas from the IIa class of Vilnius Žirmūnai gymnasium</p>
+    <p style="text-align: right;">Projektą sukūrė Mantas Armalys ir Adomas Riepšas iš 2A VŽG klasės</p>
+    <!-- <p style="text-align: right; padding-top: 3cm;">Project was made by Mantas Armalys and Adomas Riepšas from the IIa class of Vilnius Žirmūnai gymnasium</p> -->
 
     <script>
       function elementButtonPressed(element) {
@@ -113,11 +113,11 @@
         grid.updateGrid = !grid.updateGrid;
 
         if (grid.updateGrid) {
-          // document.getElementById("pauseBtn").innerText = "paleista";
-          document.getElementById("pauseBtn").innerText = "running";
+          document.getElementById("pauseBtn").innerText = "paleista";
+          // document.getElementById("pauseBtn").innerText = "running";
         } else {
-          // document.getElementById("pauseBtn").innerText = "sustabdyta";
-          document.getElementById("pauseBtn").innerText = "paused";
+          document.getElementById("pauseBtn").innerText = "sustabdyta";
+          // document.getElementById("pauseBtn").innerText = "paused";
         }
       }
 
